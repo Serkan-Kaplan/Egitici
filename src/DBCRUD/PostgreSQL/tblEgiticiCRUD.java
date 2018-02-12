@@ -31,10 +31,16 @@ public class tblEgiticiCRUD implements ICRUD{
          try {
              
              
-             PreparedStatement  ifade = baglanti.baglan().prepareCall("insert into tblegitici(id,ad,soyad,adres,iletisim,brans,calismaSaatleri) values('1'?,?,?,?,?,?)");
+             PreparedStatement  ifade = baglanti.baglan().prepareCall("insert into tblegitici(ad,soyad,adres,iletisim,brans,calismaSaatleri) values(?,?,?,?,?,?)");
          
              ifade.setString(1, egitici.getAd());
              ifade.setString(2,egitici.getSoyad());
+             ifade.setString(3, egitici.getAdres());
+             ifade.setString(4, egitici.getIletisim());
+             ifade.setString(5, egitici.getBrans());
+             ifade.setString(6, egitici.getCalismaSaatleri());
+             System.out.println(ifade.toString());        
+             ifade.executeUpdate();
              
              
              
@@ -70,8 +76,7 @@ public class tblEgiticiCRUD implements ICRUD{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
-    
+ 
     
     
     
