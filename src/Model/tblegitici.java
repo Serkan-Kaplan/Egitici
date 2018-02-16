@@ -10,7 +10,7 @@ package Model;
  * @author vektorel
  */
 public class tblegitici {
-    
+    private int id;
     private String ad;
     private String soyad;
     private String adres;
@@ -100,6 +100,20 @@ public class tblegitici {
      */
     public void setCalismaSaatleri(String calismaSaatleri) {
         this.calismaSaatleri = calismaSaatleri;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     

@@ -17,7 +17,7 @@ public class Ana {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         
-        tblEgiticiCRUD egt=new tblEgiticiCRUD();
+       /* tblEgiticiCRUD egt=new tblEgiticiCRUD();
         Model.tblegitici megt=new Model.tblegitici();
         megt.setAd("serkan");
         megt.setSoyad("kaplan");
@@ -25,7 +25,23 @@ public class Ana {
         megt.setIletisim("03125555555");
         megt.setBrans("body");
         megt.setCalismaSaatleri("08:00-20:00");
-        egt.Kaydet(megt);
+        egt.Kaydet(megt);*/
+       
+        /*tblEgiticiCRUD egt=new tblEgiticiCRUD();
+        Model.tblegitici megt=new Model.tblegitici();
+        megt.setAd("serkan_update");
+        megt.setSoyad("kaplan_update");
+        megt.setAdres("ankara_update");
+        megt.setIletisim("03125555555_update");
+        megt.setBrans("body_update");
+        megt.setCalismaSaatleri("08:00-20:00_update");
+        megt.setId(1);
+        egt.Duzenle(megt);*/
+        
+        tblEgiticiCRUD egt=new tblEgiticiCRUD();
+        egt.Sil(1);
+        
+        
         
     
     }
