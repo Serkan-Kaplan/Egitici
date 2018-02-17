@@ -38,8 +38,10 @@ public class Ana {
         megt.setId(1);
         egt.Duzenle(megt);*/
         
-        tblEgiticiCRUD egt=new tblEgiticiCRUD();
-        egt.Sil(1);
+        /*tblEgiticiCRUD egt=new tblEgiticiCRUD();
+        egt.Sil(1);*/
+        
+        
         
         
         
