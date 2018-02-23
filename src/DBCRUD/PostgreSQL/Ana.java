@@ -45,6 +45,44 @@ public class Ana {
         
         
         
+        /*tblEgiticiCRUD egt=new tblEgiticiCRUD();
+        for (Object item : egt.Listele()) {
+            
+            System.out.println("egitici id:"+ ((Model.tblegitici)item).getId());
+            System.out.println("egitici ad:"+ ((Model.tblegitici)item).getAd());
+            System.out.println("egitici soyad:"+ ((Model.tblegitici)item).getSoyad());
+            System.out.println("egitici iletisim:"+ ((Model.tblegitici)item).getIletisim());
+            System.out.println("egitici adres:"+ ((Model.tblegitici)item).getAdres());
+            System.out.println("egitici brans:"+ ((Model.tblegitici)item).getBrans());
+            System.out.println("egitici calismasaatleri:"+ ((Model.tblegitici)item).getCalismaSaatleri());
+            System.out.println("---------------------------------------------------");*/
+        
+        
+        tblEgiticiCRUD egt=new tblEgiticiCRUD();
+        for (Object item : egt.Listele1()) {
+            
+            System.out.println("egitici id:"+ ((Model.tblegitici)item).getId());
+            System.out.println("egitici ad:"+ ((Model.tblegitici)item).getAd());
+            System.out.println("egitici soyad:"+ ((Model.tblegitici)item).getSoyad());
+            System.out.println("egitici iletisim:"+ ((Model.tblegitici)item).getIletisim());
+            System.out.println("egitici adres:"+ ((Model.tblegitici)item).getAdres());
+            System.out.println("egitici brans:"+ ((Model.tblegitici)item).getBrans());
+            System.out.println("egitici calismasaatleri:"+ ((Model.tblegitici)item).getCalismaSaatleri());
+            System.out.println("---------------------------------------------------");
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
     
     }
     

@@ -8,7 +8,9 @@ package DBCRUD.PostgreSQL;
 import DBConnections.allConnections;
 import DBFramework.ICRUD;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -110,13 +112,83 @@ public class tblEgiticiCRUD implements ICRUD{
 
     @Override
     public List<Object> Listele() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         
+        
+             ArrayList<Object> egiticilistesi= new ArrayList<>();
+             ResultSet rs;
+             Model.tblegitici item;
+              try {
+             PreparedStatement  ifade = baglanti.baglan().prepareCall("select * from tblegitici");
+             rs= ifade.executeQuery();
+             while(rs.next()){
+                 item = new Model.tblegitici();
+                 item.setId(rs.getInt("id"));
+                 item.setAd(rs.getString("ad"));
+                 item.setSoyad(rs.getString("soyad"));
+                 item.setAdres(rs.getString("adres"));
+                 item.setIletisim(rs.getString("iletisim"));
+                 item.setBrans(rs.getString("brans"));
+                 item.setCalismaSaatleri(rs.getString("calismasaatleri"));
+                 
+                 
+                 egiticilistesi.add(item);
+                 
+             }
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(tblEgiticiCRUD.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(tblEgiticiCRUD.class.getName()).log(Level.SEVERE, null, ex);
+         }
+          return egiticilistesi;   
     }
-
-    @Override
-    public Object Bul(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+             
+    
+    
+    public List<Model.tblegitici> Listele1() {
+         
+        int i=0;
+             ArrayList<Model.tblegitici> egiticilistesi= new ArrayList<>();
+             ResultSet rs;
+             
+              try {
+             PreparedStatement  ifade = baglanti.baglan().prepareCall("select * from tblegitici");
+             rs= ifade.executeQuery();
+             while(rs.next()){
+                 
+                 egiticilistesi=new ArrayList<>();
+                 egiticilistesi.get(i).setId(rs.getInt("id"));
+                 egiticilistesi.get(i).setAd(rs.getString("ad"));
+                 egiticilistesi.get(i).setSoyad(rs.getString("soyad"));
+                 egiticilistesi.get(i).setIletisim(rs.getString("iletisim"));
+                 egiticilistesi.get(i).setAdres(rs.getString("adres"));
+                 egiticilistesi.get(i).setBrans(rs.getString("brans"));
+                 egiticilistesi.get(i).setCalismaSaatleri(rs.getString("calismasaatleri"));
+                 i=i+1;
+                 return egiticilistesi;
+                 
+               
+                 
+                 
+                
+                 
+             }
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(tblEgiticiCRUD.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(tblEgiticiCRUD.class.getName()).log(Level.SEVERE, null, ex);
+         }
+          return egiticilistesi;   
     }
+             
+    
+    
+    
+    
+    
+             @Override
+             public Object Bul(long id) {
+             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         }    
     
  
     
